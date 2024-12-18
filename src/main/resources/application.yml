@@ -1,0 +1,15 @@
+server:
+  port: 9096
+spring:
+  application:
+    name: payment-service
+
+  kafka:
+    bootstrap-servers: localhost:8092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: payment-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: org.apache.kafka.common.serialization.StringSerializer
